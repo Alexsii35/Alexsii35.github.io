@@ -1,0 +1,101 @@
+/* css styles */
+
+@import "./html-extension/fontawesome-free-6.5.1-web/scss/fontawesome.scss";
+
+@import "./html-extension/fontawesome-free-6.5.1-web/scss/solid.scss";
+@import "./html-extension/fontawesome-free-6.5.1-web/scss/brands.scss";
+
+
+/*-- scss:functions --*/
+
+
+
+/*-- scss:defaults --*/
+
+
+
+/*-- scss:rules --*/
+
+@mixin hist-bloc ($back-color, $fa-icon) {
+	$title-color: black;
+	$inner-color: darkslategray;
+
+	$inner-margin: 1.75em;
+
+	margin: 1em;
+	padding: 1em;
+
+	text-align: justify;
+
+	background-color: $back-color;
+	
+	border-left: solid;
+	dl {}
+
+	li{
+		margin-left: $inner-margin - 0.75em;
+	}
+
+	dd {
+		
+		-webkit-box-decoration-break: clone;
+		box-decoration-break: clone;
+		overflow-wrap: break-word;
+		
+		margin-left: $inner-margin;
+		// text-indent: 10em hanging each-line;
+		font-style: normal;
+
+		color: $inner-color;
+
+		display: inline;
+	}
+
+	dt+dd {
+		font-weight: bold;
+		color: $title-color;
+		text-decoration: underline;
+	}
+
+	dd::after {
+		content: "\a";
+		white-space: pre;
+	}
+
+	dt~dd::after {
+		content: "\a";
+		white-space: pre;
+	}
+
+	dt {
+		font-weight: bold;
+		color: $title-color;
+
+		display: inline;
+	}
+
+	dt::after {
+		content: " :";
+	}
+
+	dt:before {
+		@extend %fa-icon;
+		@extend .fa-solid;
+		content: fa-content($fa-icon);
+		margin-right: 0.5em;
+	}
+}
+
+#cv-bloc{
+	@include hist-bloc(hsl(195, 60%, 93%),
+			$fa-var-school);
+}
+
+#job-bloc{
+	@include hist-bloc(hsl(0, 60%, 93%),
+			$fa-var-helmet-safety);
+}
+
+li {
+	text-align: left;
+}

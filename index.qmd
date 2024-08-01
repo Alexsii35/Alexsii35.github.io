@@ -1,0 +1,16 @@
+---
+title: "Site personnel"
+
+search: false
+---
+
+
+
+Ce site est mon site personnel.
+
+
+Il est actuellement en construction.
+Il a pour objectif d'être une archive aux cours que je prépare.
+Ces derniers se veulent interractif afin de faciliter l'apprentissage.
+
+Le site a été construit grâce à Quarto et avec l'aide de Thibault PENNING.

@@ -1,0 +1,80 @@
+---
+title : 5G
+author : Alexis HOBL
+date : today
+
+
+editor : 
+ render-on-save : true
+---
+
+# Un petit peu d'histoire
+
+## Brief historique de la communication sans fil
+
+
+## Le devéloppement de la 5G
+
+
+
+# Prérequis scientifiques
+
+* Le modèle OSI
+ 
+* [Modulation analogique & numérique](Modulations.qmd)
+
+* Séquences Binaires Pseudo Aléatoires (SBPA)
+
+* Boucle à Vérouillage de Phase (BVP ou PLL)
+
+* Filtrage
+
+* [Analyse spectrale](Echantillonnage.qmd)
+
+* Codage canal
+
+
+# Rappels
+
+
+ ## Modulation multi-porteuses
+Mettre le lien
+
+
+
+
+
+
+
+# Le code polaire
+
+
+
+
+
+
+
+
+
+# Pour aller plus loin...
+* Les B-DMC (Binary-input Discrete Memoryless Channel)
+
+
+# Biblio
+
+* https://www.sciencedirect.com/topics/engineering/discrete-memoryless-channel
+
+* https://arxiv.org/pdf/1107.5637
+
+* https://easytp.cnam.fr/leruyet/Cours/presentation_ofdm.pdf
+
+* https://www.techniques-ingenieur.fr/base-documentaire/archives-th12/
+* archives-reseaux-et-telecommunications-tiate/archive-3/transmission-des-signaux-numeriques-e7100/codage-de-canal-e7100niv10003.html
+
+
+
+
+
+
+
+

@@ -1,0 +1,38 @@
+---
+title : Machines électriques
+author : Alexis HOBL
+date : today
+
+
+editor : 
+ render-on-save : true
+---
+
+
+# Historique
+
+
+```{python}
+import matplotlib.pyplot as plt
+import numpy as np
+
+def ferraris():
+    return 0
+
+x = np.linspace(-2*np.pi,2*np.pi,100)
+y = np.sin(x)
+
+plt.plot(x,y)
+```
+
+
+
+
+
+
+
+
+
+
+
+

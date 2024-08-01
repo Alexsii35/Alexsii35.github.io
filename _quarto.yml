@@ -1,0 +1,36 @@
+project:
+  type: website
+
+website:
+  title: "Alexis HOBL"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Accueil
+      - href: cours.qmd
+        text: Cours
+      - href: about.qmd
+        text: A propos de moi
+
+  page-footer:
+   border: true
+   center: |
+    [Contact](about.html#contact)
+
+format:
+  html:
+    theme: 
+      - cosmo
+      - styles.scss
+    # css: 
+    toc: true
+
+    resources: 
+      - webfonts
+      
+# filters:
+#   - shinylive
+    
+
+
+

@@ -1,0 +1,10 @@
+---
+title : Quadripôles
+author : Alexis HOBL
+date : today
+
+
+editor : 
+ render-on-save : true
+---
+

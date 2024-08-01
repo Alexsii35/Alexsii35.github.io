@@ -1,0 +1,119 @@
+---
+title: "Alexis HOBL"
+
+lang: fr
+
+about:
+  template: jolla #marquee #jolla
+  image-shape: round
+
+  image: "Hobl Alexis - 287_cropped.jpg"
+  
+email-obfuscation: javascript
+
+format:
+  html:
+    mermaid:
+      theme: default
+
+
+search: false
+
+
+editor: 
+  render-on-save: true
+---
+
+Doctorant au CEA-Leti en photonique 
+
+# Formations
+
+:::{#cv-bloc}
+
+2024-2027
+: CEA-Leti, Grenoble, France
+: Thèse de doctorat - Micro-Sources Lasers à Cascades Quantiques III-V/Si
+
+2024
+: University of British Columbia, Vancouver, Canada
+: Phot1x - Silicon Photonics Design, Fabrication and Data Analysis - 87/100
+
+
+2023-2024
+: Phelma INP, Grenoble, France
+: Master 2 Photonique & Semiconducteurs - parcours Semiconducteurs 
+
+
+2020-2024
+: ENS Rennes, Bruz, France
+: Diplôme de l'ENS de Rennes
+
+* Titulaire de l'agrégation en Sciences Industrielles de l'Ingénieur option Ingénierie Électrique - rang : 8
+
+* M2 Sciences Pour l'Ingénieur et Applications parcours enseignement - préparation à l'agrégation - mention Assez Bien
+
+* Master 1 Ingénierie des Systèmes Complexes - mention Assez Bien
+
+* Licence 3 option Électroniques, énergie électrique, automatique - mention Assez bien
+
+* Licence 3 option Sciences pour l'ingénieur - mention Assez bien
+
+
+2018-2020
+: Classe préparatoire TSI
+: Lycée Polyvalent Chaptal, Saint-Brieuc
+
+2016-2018
+: Bac STI2D enseignements spécifiques SIN & ITEC.
+
+:::
+
+# Expériences & Stages
+
+:::{#job-bloc}
+
+2024
+: CEA-Leti, Grenoble
+: Étude d'une méthode de correction de signal pour les biocapteurs à base de circuits photoniques intégrés. 
+
+2023
+: UrbanLoop
+: Étude technico-économique d’une alimentation d’une capsule UrbanLoop pour l'épreuve du dossier industriel de l'agrégation de SII.""
+
+2022
+: Institut de Physique de Rennes, Rennes
+: Collisions réactives à basse température impliquant l’ion
+CH3+ avec la méthode CRESU-SIS : applications
+astrophysiques
+
+2021
+: IRISA
+: Mise en place d'une expérience
+pour évaluer les performances de quadrirotors
+en suivi de trajectoires robustes dites
+"control-aware"
+
+:::
+
+
+# Langage de programmation
+
+Langage couramment utilisé :
+
+* <i class="fa-brands fa-python"></i> Python
+* <i class="fa-solid fa-wave-square"></i> MatLab & Simulink
+
+
+# Intérêts et temps libre
+
+Je pratique et ai pratique de nombreux sports : escrime (depuis mes 6 ans), haltérophilie, boxe anglaise, grappling.
+
+Amateur de musique je pratique la guitare en autodidacte. Je porte un intérêt particulier à la guitare classique. 
+
+
+# Contact{#contact}
+
+Emails :
+[alexis.hobl [arobase] ens-rennes.fr](mailto:alexis.hobl@ens-rennes.fr)
+
+[alexis.hobl [arobase] grenoble-inp.org](mailto:alexis.hobl@grenoble-inp.org)

@@ -1,0 +1,60 @@
+---
+title : Échantillonnage
+author : Alexis HOBL
+date : today
+
+
+editor : 
+ render-on-save : true
+---
+
+# Un petit peu d'histoire...
+
+
+
+
+
+# Pré-requis mathématiques : Analyse spectrale
+
+## Définitions
+
+On considère un signal noté s(t). 
+
+* Signal pair : s(-t) = s(t)
+
+* Signal impair : s(-t) = -s(t)
+
+* Signal T-périodique : s(t+T) = s(t)
+
+* Puissance instantannée d'un signal : $p(t) = |s(t)|^2 = s(t)*s^*(t)$
+
+* Énergie d'un signal : $E = \int_{-\infty}^{+\infty}p(t) dt$
+
+* Puissance moyenne d'un signal : $P = lim_{T\to \infty} \dfrac{1}{T}\int_0^T |s(t)|^2 dt$
+
+* Valeur moyenne d'un signal : $P = lim_{T\to +\infty} \dfrac{1}{T}\int_0^T s(t) dt$
+
+* Valeur efficace d'un signal : $s_{RMS} = lim_{T\to +\infty} sqrt{\dfrac{1}{T}\int_0^T |s(t)|^2 dt}$
+
+## Série de Fourier
+
+### Hypothèses
+
+La décomposition en série de Fourier ne peut s'appliquer que sur un signal \textbf{périodique} à \textbf{support temporel infini}.
+C'est à dire une énergie infinie et une puissance finie. 
+
+### Définition
+
+Soit un signal s(t) de fréquence f ($f=\dfrac{1}{T}$).
+
+$s(t) = \sum_{n=-\infty}^{+\infty}c_n e^{j2\pi nft}$
+
+Avec $c_n$ les coefficients complexes de la série de Fourier tels que : 
+
+$c_n = \dfrac{1}{T}\int_{t}^{t+T}s(t)e^{-j2\pi nft}dt$ 
+
+Il est possible d'écrire la série de Fourier de ce signal avec des coefficients $a_n$ et $b_n$ réels :
+
+$s(t) = a_0 \sum_{n=1}^{+\infty}a_n cos(2\pi nft)+b_n sin(2\pi nft)$
+
+$a_0$ est la valeur moyenne du signal. Il s'écrit : $a_0 = \dfrac{1}{T}\int_t^{t+T}s(t) dt$
