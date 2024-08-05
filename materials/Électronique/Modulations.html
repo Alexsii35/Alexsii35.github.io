@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.52">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Alexis HOBL">
+<meta name="dcterms.date" content="2024-08-05">
+
+<title>Modulations analogique et numérique – Alexis HOBL</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<meta name="shinylive:serviceworker_dir" content="../..">
+<script src="../../site_libs/quarto-contrib/shinylive-0.5.0/shinylive/load-shinylive-sw.js" type="module"></script>
+<script src="../../site_libs/quarto-contrib/shinylive-0.5.0/shinylive/run-python-blocks.js" type="module"></script>
+<link href="../../site_libs/quarto-contrib/shinylive-0.5.0/shinylive/shinylive.css" rel="stylesheet">
+<link href="../../site_libs/quarto-contrib/shinylive-quarto-css/shinylive-quarto.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script src="../../site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="../../site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="../../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Alexis HOBL</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text">Accueil</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../cours.html"> 
+<span class="menu-text">Cours</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html"> 
+<span class="menu-text">A propos de moi</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#un-petit-peu-dhistoire" id="toc-un-petit-peu-dhistoire" class="nav-link active" data-scroll-target="#un-petit-peu-dhistoire">Un petit peu d’histoire</a>
+  <ul class="collapse">
+  <li><a href="#les-ondes-électromagnétiques" id="toc-les-ondes-électromagnétiques" class="nav-link" data-scroll-target="#les-ondes-électromagnétiques">Les ondes électromagnétiques</a></li>
+  <li><a href="#les-télécommunications-sans-fil" id="toc-les-télécommunications-sans-fil" class="nav-link" data-scroll-target="#les-télécommunications-sans-fil">Les télécommunications sans fil</a></li>
+  </ul></li>
+  <li><a href="#prérequis" id="toc-prérequis" class="nav-link" data-scroll-target="#prérequis">Prérequis</a></li>
+  <li><a href="#définitions" id="toc-définitions" class="nav-link" data-scroll-target="#définitions">Définitions</a></li>
+  <li><a href="#modulation-analogique" id="toc-modulation-analogique" class="nav-link" data-scroll-target="#modulation-analogique">Modulation analogique</a>
+  <ul class="collapse">
+  <li><a href="#modulation-damplitude-am" id="toc-modulation-damplitude-am" class="nav-link" data-scroll-target="#modulation-damplitude-am">Modulation d’amplitude (AM)</a>
+  <ul class="collapse">
+  <li><a href="#bande-latérale-unique-blu" id="toc-bande-latérale-unique-blu" class="nav-link" data-scroll-target="#bande-latérale-unique-blu">Bande Latérale Unique (BLU)</a></li>
+  <li><a href="#double-bande-latérale-dsb" id="toc-double-bande-latérale-dsb" class="nav-link" data-scroll-target="#double-bande-latérale-dsb">Double bande latérale (DSB)</a></li>
+  </ul></li>
+  <li><a href="#modulation-de-fréquence" id="toc-modulation-de-fréquence" class="nav-link" data-scroll-target="#modulation-de-fréquence">Modulation de fréquence</a></li>
+  <li><a href="#modulation-de-phase" id="toc-modulation-de-phase" class="nav-link" data-scroll-target="#modulation-de-phase">Modulation de phase</a></li>
+  </ul></li>
+  <li><a href="#modulation-numérique" id="toc-modulation-numérique" class="nav-link" data-scroll-target="#modulation-numérique">Modulation numérique</a>
+  <ul class="collapse">
+  <li><a href="#psk" id="toc-psk" class="nav-link" data-scroll-target="#psk">PSK</a></li>
+  <li><a href="#fsk" id="toc-fsk" class="nav-link" data-scroll-target="#fsk">FSK</a></li>
+  <li><a href="#modulations-complexes" id="toc-modulations-complexes" class="nav-link" data-scroll-target="#modulations-complexes">Modulations complexes</a>
+  <ul class="collapse">
+  <li><a href="#qam" id="toc-qam" class="nav-link" data-scroll-target="#qam">QAM</a></li>
+  </ul></li>
+  <li><a href="#msk" id="toc-msk" class="nav-link" data-scroll-target="#msk">MSK</a>
+  <ul class="collapse">
+  <li><a href="#gmsk" id="toc-gmsk" class="nav-link" data-scroll-target="#gmsk">GMSK</a></li>
+  </ul></li>
+  <li><a href="#delta-sigma" id="toc-delta-sigma" class="nav-link" data-scroll-target="#delta-sigma">Delta-Sigma</a></li>
+  <li><a href="#modulation-multi-porteuses" id="toc-modulation-multi-porteuses" class="nav-link" data-scroll-target="#modulation-multi-porteuses">Modulation multi-porteuses</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Modulations analogique et numérique</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Alexis HOBL </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">August 5, 2024</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="un-petit-peu-dhistoire" class="level1">
+<h1>Un petit peu d’histoire</h1>
+<section id="les-ondes-électromagnétiques" class="level2">
+<h2 class="anchored" data-anchor-id="les-ondes-électromagnétiques">Les ondes électromagnétiques</h2>
+<ul>
+<li><p>1865 : James Clerk Maxwell unifie l’électromagnétisme à l’aide de huits équations. Oliver Heaviside réécrit ces équations en 1884 sous forme de quatre équations vectorielles.</p></li>
+<li><p>1887 : Heinrich Hertz vérifie expérimentalement la théorie de Maxwell, selon laquelle la lumière est une onde électromagnétique.</p></li>
+</ul>
+</section>
+<section id="les-télécommunications-sans-fil" class="level2">
+<h2 class="anchored" data-anchor-id="les-télécommunications-sans-fil">Les télécommunications sans fil</h2>
+<ul>
+<li><p>23 Décembre 1900 : Reginald Fessenden transmet la voix humaine pour la première fois de l’histoire grâce à de la modulation d’amplitude (AM). C’est le début des télécommunications sans fil.</p></li>
+<li><p>1901 : Guglielmo Marconi réalise la première transmission radio transatlantique. Cet exploit lui a valu le prix Nobel de Physique de 1909 partagé avec Karl Ferdinand Braun.</p></li>
+<li><p>192X : Jhon Renshaw Carson publie sa théorie mathématiques sur la modulation de fréquence (FM). Edwin Howard Armstrong met au point un récépteur hétérodyne permettant de faire de la modulation de fréquence.</p></li>
+<li><p>1938 : Alec Reeves brevete son invention de modulation d’impulsion codée permettant de réduire le bruit de la voix transmise sur e longue distance.</p></li>
+<li><p>1948 : Claude Shannon publie “A Mathematical Theory of Communication” établissant les principes de base mathématiques de la communication numérique.</p></li>
+</ul>
+</section>
+</section>
+<section id="prérequis" class="level1">
+<h1>Prérequis</h1>
+<ul>
+<li><p>Trigonométrie</p></li>
+<li><p>Analyse spectrale</p></li>
+<li><p>Modèle OSI</p></li>
+</ul>
+</section>
+<section id="définitions" class="level1">
+<h1>Définitions</h1>
+<dl>
+<dt><strong><em>Système de communication</em></strong></dt>
+<dd>
+On définit un <strong><em>système de communication</em></strong> comme étant l’ensemble des système composé d’une source d’information via un récepteur via le passage d’un canal de transmission.
+</dd>
+</dl>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart LR
+A(Source) -- Message émis --&gt; B(Canal de transmission) -- Message transmis --&gt; C(Récepteur)
+D(Perturbations) ==&gt; B
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<dl>
+<dt><strong><em>Canal de transmission</em></strong></dt>
+<dd>
+On définit un <strong><em>canal de transmission</em></strong> comme étant tout support physique à travers lequel l’information est transmise. Ce support peut être * Hertzien (air principalement) * Filaire à support électrique (câble coaxial, lignes torsadées, …) * Filaire à support optique (fibre optique, guide d’ondes, …)
+</dd>
+</dl>
+<p>Un canal de transmission est défini par deux caractéristiques : 1. Sa bande passante. 2. Son bruit.</p>
+<dl>
+<dt><strong><em>Modulation</em></strong></dt>
+<dd>
+Opération consistant à reporter le spectre d’un signal dans un domaine fréquentiel favorable à sa transmission. Il faut adapter le signal au canal auquel il est confronté.
+</dd>
+<dt><strong><em>Signal analogique</em></strong></dt>
+<dd>
+Un signal est analogique si <span class="math inline">\(s(t) : t \in X \subseteq \mathbb{R}\)</span> et lorsqu’il ne dépend que d’une variable indépendante.
+</dd>
+</dl>
+</section>
+<section id="modulation-analogique" class="level1">
+<h1>Modulation analogique</h1>
+<p>La modulation est dite analogique si le signal transmis via le canal reste analogique durant tout le processus de transmission.</p>
+<section id="modulation-damplitude-am" class="level2">
+<h2 class="anchored" data-anchor-id="modulation-damplitude-am">Modulation d’amplitude (AM)</h2>
+<p>La modulation d’amplitude est une modulation qui consiste à faire varier l’amplitude d’une porteuse à la même fréquence qu’un signal modulant.</p>
+<dl>
+<dt><strong><em>Notations</em></strong></dt>
+<dd>
+On appelle : * Porteuse le signal <span class="math inline">\(p(t) = A_p cos(\omega_p t +\varphi_p))\)</span>. * m(t) le signal modulant. Ce signal contient l’information * s(t) le signal modulé en amplitude.
+</dd>
+</dl>
+<section id="bande-latérale-unique-blu" class="level3">
+<h3 class="anchored" data-anchor-id="bande-latérale-unique-blu">Bande Latérale Unique (BLU)</h3>
+</section>
+<section id="double-bande-latérale-dsb" class="level3">
+<h3 class="anchored" data-anchor-id="double-bande-latérale-dsb">Double bande latérale (DSB)</h3>
+<p>On distingue deux types de modulation d’amplitude à double bande latérale :</p>
+<ul>
+<li><p>La modulation d’amplitude Double Bande Avec Porteuse (DBAP)</p></li>
+<li><p>La modulation d’amplitude Double Bande Sans Porteuse (DBSP)</p></li>
+</ul>
+<p>L’expression générale du signal modulé est donnée par :</p>
+<p><span class="math display">\[f[m(t)]cos(\omega_p t + \varphi_p)\]</span></p>
+<p>Avec <span class="math inline">\(f[m]\)</span> une fonction affine.</p>
+<p>Il est alors possible d’écrire l’expression du signal modulé pour la AM-DBAP et la AM-DBSP.</p>
+<dl>
+<dt><strong><em>AM-DBAP</em></strong></dt>
+<dd>
+<span class="math inline">\(s(t) = A_p[1+k\cdot m(t)]cos(\omega_p + \varphi_p)\)</span>
+</dd>
+<dt><strong><em>AM-DBSP</em></strong></dt>
+<dd>
+<span class="math inline">\(s(t) = A_p\cdot k\cdot m(t)cos(\omega_p + \varphi_p)\)</span>
+</dd>
+</dl>
+<p>L’emploi d’une fonction <span class="math inline">\(f\)</span> linéaire permet de considérer un signal modulant périodique comme une somme de signal sinusoïde. Le principe de superposition peut alors s’apppliquer.</p>
+<p><strong>On considérere par la suite que <span class="math inline">\(\varphi_p = 0\)</span></strong>.</p>
+<section id="section" class="level4">
+<h4 class="anchored" data-anchor-id="section"></h4>
+<!-- ```{shinylive-python} -->
+<pre class="shinylive-python" data-engine="python"><code>#| standalone: true
+#| viewerHeight: 600
+#| viewerWidth: 700
+from shiny import App, render, ui
+import numpy as np
+#from scipy import signal
+import matplotlib.pyplot as plt
+
+app_ui = ui.page_fluid(
+    ui.layout_sidebar(
+        ui.sidebar(
+            ui.input_slider("f_porteuse", "Fréquence_porteuse", 0, 50, 10, step=1),
+            ui.input_slider("f_modulant", "Fréquence_modulant", 0, 5, 1, step=0.1),
+            ui.input_slider("amplitude", "Amplitude", 0, 2, 1, step=0.25),
+            ui.input_slider("shift", "Déphasage", -2*3.14, 2*3.14, 0, step=0.1),
+            ui.input_slider("m", "Indice de modulation", -5, 5, 0.5, step=0.1),
+        ),
+    ui.output_plot("plot"),
+    ), 
+)
+
+def server(input, output, session):
+    @output
+    @render.plot(alt="Sine function")
+    def plot():
+        t = np.arange(0.0, 4.0, 0.0001) # vecteur de temps
+
+        p = input.amplitude()*np.sin((2 * np.pi * input.f_porteuse()) * (t - input.shift() / 2)) # porteuse
+
+        m = input.amplitude()*np.sin((2*np.pi*input.f_modulant()) * (t - input.shift() / 2)) # signal modulant sinus
+
+        #carre = input.amplitude()*signal.square((2*np.pi*input.f_modulant()) * (t - input.shift() / 2)) # signal modulant carré
+        
+        s_sinus = input.amplitude()*(1+input.m()*m)*np.sin((2 * np.pi * input.f_porteuse()) * (t - input.shift() / 2)) #signal modulé
+        
+        #s_carre = input.amplitude()*(1+input.carre()*m)*np.sin((2 * np.pi / input.period_porteuse()) * (t - input.shift() / 2)) #signal modulé
+
+        e_sinus = input.amplitude()*(1+input.m()*m) # enveloppe supérieure
+
+        #e_carre = input.amplitude()*(1+input.m()*carre) # enveloppe supérieure
+
+        fig, axs = plt.subplots(3, 1)
+
+        axs[0].plot(t, p, label = 'Porteuse')
+        axs[0].set_ylim([-2*input.amplitude(), 2*input.amplitude()])
+        axs[0].legend()
+        axs[0].grid()
+
+        
+        axs[1].plot(t, m, label = 'Modulant sinusoïdal')
+        axs[1].set_ylim([-2*input.amplitude(), 2*input.amplitude()])
+        axs[1].legend()
+        axs[1].grid()
+
+        """
+        axs[2].plot(t, carre, label = 'Modulant carré')
+        axs[2].set_ylim([-2*input.amplitude(), 2*input.amplitude()])
+        axs[2].legend()
+        axs[2].grid()
+        """
+
+        axs[2].plot(t, e_sinus, label = 'Enveloppe')
+        axs[2].set_ylim([-2*input.amplitude(), 2*input.amplitude()])
+        axs[2].plot(t, s_sinus, label = 'Signal modulé')
+        axs[2].legend()
+        axs[2].grid()
+
+        """
+        axs[4].plot(t, e_carre, label = 'Enveloppe')
+        axs[4].set_ylim([-2*input.amplitude(), 2*input.amplitude()])
+        axs[4].plot(t, s_carre, label = 'Signal modulé')
+        axs[4].legend()
+        axs[4].grid()
+        """
+        
+app = App(app_ui, server)
+</code></pre>
+</section>
+</section>
+</section>
+<section id="modulation-de-fréquence" class="level2">
+<h2 class="anchored" data-anchor-id="modulation-de-fréquence">Modulation de fréquence</h2>
+</section>
+<section id="modulation-de-phase" class="level2">
+<h2 class="anchored" data-anchor-id="modulation-de-phase">Modulation de phase</h2>
+</section>
+</section>
+<section id="modulation-numérique" class="level1">
+<h1>Modulation numérique</h1>
+<p>La modulation est dite analogique si le signal est discrétisé avant sa transmission via le canal.</p>
+<section id="psk" class="level2">
+<h2 class="anchored" data-anchor-id="psk">PSK</h2>
+</section>
+<section id="fsk" class="level2">
+<h2 class="anchored" data-anchor-id="fsk">FSK</h2>
+</section>
+<section id="modulations-complexes" class="level2">
+<h2 class="anchored" data-anchor-id="modulations-complexes">Modulations complexes</h2>
+<section id="qam" class="level3">
+<h3 class="anchored" data-anchor-id="qam">QAM</h3>
+</section>
+</section>
+<section id="msk" class="level2">
+<h2 class="anchored" data-anchor-id="msk">MSK</h2>
+<section id="gmsk" class="level3">
+<h3 class="anchored" data-anchor-id="gmsk">GMSK</h3>
+</section>
+</section>
+<section id="delta-sigma" class="level2">
+<h2 class="anchored" data-anchor-id="delta-sigma">Delta-Sigma</h2>
+</section>
+<section id="modulation-multi-porteuses" class="level2">
+<h2 class="anchored" data-anchor-id="modulation-multi-porteuses">Modulation multi-porteuses</h2>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p><a href="about.html#contact">Contact</a></p>
+</div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

@@ -1,0 +1,128 @@
+[
+  {
+    "objectID": "materials/index.html",
+    "href": "materials/index.html",
+    "title": "Preface",
+    "section": "",
+    "text": "Preface\nThis is a Quarto book.\nTo learn more about Quarto books visit https://quarto.org/docs/books."
+  },
+  {
+    "objectID": "cours.html",
+    "href": "cours.html",
+    "title": "Liste des cours",
+    "section": "",
+    "text": "5G\n\n\n\n\n\n\n\n\n\n\n\nAug 5, 2024\n\n\nAlexis HOBL\n\n\n\n\n\n\n\n\n\n\n\n\nAntennes & Hyperfréquences\n\n\n\n\n\n\n\n\n\n\n\nAug 5, 2024\n\n\nAlexs HOBL\n\n\n\n\n\n\n\n\n\n\n\n\nAsservissement\n\n\n\n\n\n\n\n\n\n\n\nAug 5, 2024\n\n\nAlexis HOBL\n\n\n\n\n\n\n\n\n\n\n\n\nCommande de machines électriques\n\n\n\n\n\n\n\n\n\n\n\nAug 5, 2024\n\n\nAlexis HOBL\n\n\n\n\n\n\n\n\n\n\n\n\nComposants de l’électronique de puissance\n\n\n\n\n\n\n\n\n\n\n\nAug 5, 2024\n\n\nAlexis HOBL\n\n\n\n\n\n\n\n\n\n\n\n\nMachines électriques\n\n\n\n\n\n\n\n\n\n\n\nAug 5, 2024\n\n\nAlexis HOBL\n\n\n\n\n\n\n\n\n\n\n\n\nModulations analogique et numérique\n\n\n\n\n\n\n\n\n\n\n\nAug 5, 2024\n\n\nAlexis HOBL\n\n\n\n\n\n\n\n\n\n\n\n\nOptique non-linéaire\n\n\n\n\n\n\n\n\n\n\n\nAug 5, 2024\n\n\nAlexis HOBL\n\n\n\n\n\n\n\n\n\n\n\n\nPhysique du composant\n\n\n\n\n\n\n\n\n\n\n\nAug 5, 2024\n\n\nAlexis HOBL\n\n\n\n\n\n\n\n\n\n\n\n\nPhysique du laser\n\n\n\n\n\n\n\n\n\n\n\nAug 5, 2024\n\n\nAlexis HOBL\n\n\n\n\n\n\n\n\n\n\n\n\nPhysique du semiconducteur\n\n\n\n\n\n\n\n\n\n\n\nAug 5, 2024\n\n\nAlexis HOBL\n\n\n\n\n\n\n\n\n\n\n\n\nQuadripôles\n\n\n\n\n\n\n\n\n\n\n\nAug 5, 2024\n\n\nAlexis HOBL\n\n\n\n\n\n\n\n\n\n\n\n\nReferences\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nRéseaux électriques\n\n\n\n\n\n\n\n\n\n\n\nAug 5, 2024\n\n\nAlexis HOBL\n\n\n\n\n\n\n\n\n\n\n\n\nÉchantillonnage\n\n\n\n\n\n\n\n\n\n\n\nAug 5, 2024\n\n\nAlexis HOBL\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "materials/Electrotechnique/machines_elec.html",
+    "href": "materials/Electrotechnique/machines_elec.html",
+    "title": "Machines électriques",
+    "section": "",
+    "text": "Historique\n\nimport matplotlib.pyplot as plt\nimport numpy as np\n\ndef ferraris():\n    return 0\n\nx = np.linspace(-2*np.pi,2*np.pi,100)\ny = np.sin(x)\n\nplt.plot(x,y)"
+  },
+  {
+    "objectID": "materials/references.html",
+    "href": "materials/references.html",
+    "title": "References",
+    "section": "",
+    "text": "References"
+  },
+  {
+    "objectID": "materials/Électronique/Echantillonnage.html#définitions",
+    "href": "materials/Électronique/Echantillonnage.html#définitions",
+    "title": "Échantillonnage",
+    "section": "Définitions",
+    "text": "Définitions\nOn considère un signal noté s(t).\n\nSignal pair : s(-t) = s(t)\nSignal impair : s(-t) = -s(t)\nSignal T-périodique : s(t+T) = s(t)\nPuissance instantannée d’un signal : \\(p(t) = |s(t)|^2 = s(t)*s^*(t)\\)\nÉnergie d’un signal : \\(E = \\int_{-\\infty}^{+\\infty}p(t) dt\\)\nPuissance moyenne d’un signal : \\(P = lim_{T\\to \\infty} \\dfrac{1}{T}\\int_0^T |s(t)|^2 dt\\)\nValeur moyenne d’un signal : \\(P = lim_{T\\to +\\infty} \\dfrac{1}{T}\\int_0^T s(t) dt\\)\nValeur efficace d’un signal : \\(s_{RMS} = lim_{T\\to +\\infty} sqrt{\\dfrac{1}{T}\\int_0^T |s(t)|^2 dt}\\)"
+  },
+  {
+    "objectID": "materials/Électronique/Echantillonnage.html#série-de-fourier",
+    "href": "materials/Électronique/Echantillonnage.html#série-de-fourier",
+    "title": "Échantillonnage",
+    "section": "Série de Fourier",
+    "text": "Série de Fourier\n\nHypothèses\nLa décomposition en série de Fourier ne peut s’appliquer que sur un signal à . C’est à dire une énergie infinie et une puissance finie.\n\n\nDéfinition\nSoit un signal s(t) de fréquence f (\\(f=\\dfrac{1}{T}\\)).\n\\(s(t) = \\sum_{n=-\\infty}^{+\\infty}c_n e^{j2\\pi nft}\\)\nAvec \\(c_n\\) les coefficients complexes de la série de Fourier tels que :\n\\(c_n = \\dfrac{1}{T}\\int_{t}^{t+T}s(t)e^{-j2\\pi nft}dt\\)\nIl est possible d’écrire la série de Fourier de ce signal avec des coefficients \\(a_n\\) et \\(b_n\\) réels :\n\\(s(t) = a_0 \\sum_{n=1}^{+\\infty}a_n cos(2\\pi nft)+b_n sin(2\\pi nft)\\)\n\\(a_0\\) est la valeur moyenne du signal. Il s’écrit : \\(a_0 = \\dfrac{1}{T}\\int_t^{t+T}s(t) dt\\)"
+  },
+  {
+    "objectID": "materials/Électronique/Modulations.html",
+    "href": "materials/Électronique/Modulations.html",
+    "title": "Modulations analogique et numérique",
+    "section": "",
+    "text": "1865 : James Clerk Maxwell unifie l’électromagnétisme à l’aide de huits équations. Oliver Heaviside réécrit ces équations en 1884 sous forme de quatre équations vectorielles.\n1887 : Heinrich Hertz vérifie expérimentalement la théorie de Maxwell, selon laquelle la lumière est une onde électromagnétique.\n\n\n\n\n\n23 Décembre 1900 : Reginald Fessenden transmet la voix humaine pour la première fois de l’histoire grâce à de la modulation d’amplitude (AM). C’est le début des télécommunications sans fil.\n1901 : Guglielmo Marconi réalise la première transmission radio transatlantique. Cet exploit lui a valu le prix Nobel de Physique de 1909 partagé avec Karl Ferdinand Braun.\n192X : Jhon Renshaw Carson publie sa théorie mathématiques sur la modulation de fréquence (FM). Edwin Howard Armstrong met au point un récépteur hétérodyne permettant de faire de la modulation de fréquence.\n1938 : Alec Reeves brevete son invention de modulation d’impulsion codée permettant de réduire le bruit de la voix transmise sur e longue distance.\n1948 : Claude Shannon publie “A Mathematical Theory of Communication” établissant les principes de base mathématiques de la communication numérique."
+  },
+  {
+    "objectID": "materials/Électronique/Modulations.html#les-ondes-électromagnétiques",
+    "href": "materials/Électronique/Modulations.html#les-ondes-électromagnétiques",
+    "title": "Modulations analogique et numérique",
+    "section": "",
+    "text": "1865 : James Clerk Maxwell unifie l’électromagnétisme à l’aide de huits équations. Oliver Heaviside réécrit ces équations en 1884 sous forme de quatre équations vectorielles.\n1887 : Heinrich Hertz vérifie expérimentalement la théorie de Maxwell, selon laquelle la lumière est une onde électromagnétique."
+  },
+  {
+    "objectID": "materials/Électronique/Modulations.html#les-télécommunications-sans-fil",
+    "href": "materials/Électronique/Modulations.html#les-télécommunications-sans-fil",
+    "title": "Modulations analogique et numérique",
+    "section": "",
+    "text": "23 Décembre 1900 : Reginald Fessenden transmet la voix humaine pour la première fois de l’histoire grâce à de la modulation d’amplitude (AM). C’est le début des télécommunications sans fil.\n1901 : Guglielmo Marconi réalise la première transmission radio transatlantique. Cet exploit lui a valu le prix Nobel de Physique de 1909 partagé avec Karl Ferdinand Braun.\n192X : Jhon Renshaw Carson publie sa théorie mathématiques sur la modulation de fréquence (FM). Edwin Howard Armstrong met au point un récépteur hétérodyne permettant de faire de la modulation de fréquence.\n1938 : Alec Reeves brevete son invention de modulation d’impulsion codée permettant de réduire le bruit de la voix transmise sur e longue distance.\n1948 : Claude Shannon publie “A Mathematical Theory of Communication” établissant les principes de base mathématiques de la communication numérique."
+  },
+  {
+    "objectID": "materials/Électronique/Modulations.html#modulation-damplitude-am",
+    "href": "materials/Électronique/Modulations.html#modulation-damplitude-am",
+    "title": "Modulations analogique et numérique",
+    "section": "Modulation d’amplitude (AM)",
+    "text": "Modulation d’amplitude (AM)\nLa modulation d’amplitude est une modulation qui consiste à faire varier l’amplitude d’une porteuse à la même fréquence qu’un signal modulant.\n\nNotations\n\nOn appelle : * Porteuse le signal \\(p(t) = A_p cos(\\omega_p t +\\varphi_p))\\). * m(t) le signal modulant. Ce signal contient l’information * s(t) le signal modulé en amplitude.\n\n\n\nBande Latérale Unique (BLU)\n\n\nDouble bande latérale (DSB)\nOn distingue deux types de modulation d’amplitude à double bande latérale :\n\nLa modulation d’amplitude Double Bande Avec Porteuse (DBAP)\nLa modulation d’amplitude Double Bande Sans Porteuse (DBSP)\n\nL’expression générale du signal modulé est donnée par :\n\\[f[m(t)]cos(\\omega_p t + \\varphi_p)\\]\nAvec \\(f[m]\\) une fonction affine.\nIl est alors possible d’écrire l’expression du signal modulé pour la AM-DBAP et la AM-DBSP.\n\nAM-DBAP\n\n\\(s(t) = A_p[1+k\\cdot m(t)]cos(\\omega_p + \\varphi_p)\\)\n\nAM-DBSP\n\n\\(s(t) = A_p\\cdot k\\cdot m(t)cos(\\omega_p + \\varphi_p)\\)\n\n\nL’emploi d’une fonction \\(f\\) linéaire permet de considérer un signal modulant périodique comme une somme de signal sinusoïde. Le principe de superposition peut alors s’apppliquer.\nOn considérere par la suite que \\(\\varphi_p = 0\\).\n\n\n\n#| standalone: true\n#| viewerHeight: 600\n#| viewerWidth: 700\nfrom shiny import App, render, ui\nimport numpy as np\n#from scipy import signal\nimport matplotlib.pyplot as plt\n\napp_ui = ui.page_fluid(\n    ui.layout_sidebar(\n        ui.sidebar(\n            ui.input_slider(\"f_porteuse\", \"Fréquence_porteuse\", 0, 50, 10, step=1),\n            ui.input_slider(\"f_modulant\", \"Fréquence_modulant\", 0, 5, 1, step=0.1),\n            ui.input_slider(\"amplitude\", \"Amplitude\", 0, 2, 1, step=0.25),\n            ui.input_slider(\"shift\", \"Déphasage\", -2*3.14, 2*3.14, 0, step=0.1),\n            ui.input_slider(\"m\", \"Indice de modulation\", -5, 5, 0.5, step=0.1),\n        ),\n    ui.output_plot(\"plot\"),\n    ), \n)\n\ndef server(input, output, session):\n    @output\n    @render.plot(alt=\"Sine function\")\n    def plot():\n        t = np.arange(0.0, 4.0, 0.0001) # vecteur de temps\n\n        p = input.amplitude()*np.sin((2 * np.pi * input.f_porteuse()) * (t - input.shift() / 2)) # porteuse\n\n        m = input.amplitude()*np.sin((2*np.pi*input.f_modulant()) * (t - input.shift() / 2)) # signal modulant sinus\n\n        #carre = input.amplitude()*signal.square((2*np.pi*input.f_modulant()) * (t - input.shift() / 2)) # signal modulant carré\n        \n        s_sinus = input.amplitude()*(1+input.m()*m)*np.sin((2 * np.pi * input.f_porteuse()) * (t - input.shift() / 2)) #signal modulé\n        \n        #s_carre = input.amplitude()*(1+input.carre()*m)*np.sin((2 * np.pi / input.period_porteuse()) * (t - input.shift() / 2)) #signal modulé\n\n        e_sinus = input.amplitude()*(1+input.m()*m) # enveloppe supérieure\n\n        #e_carre = input.amplitude()*(1+input.m()*carre) # enveloppe supérieure\n\n        fig, axs = plt.subplots(3, 1)\n\n        axs[0].plot(t, p, label = 'Porteuse')\n        axs[0].set_ylim([-2*input.amplitude(), 2*input.amplitude()])\n        axs[0].legend()\n        axs[0].grid()\n\n        \n        axs[1].plot(t, m, label = 'Modulant sinusoïdal')\n        axs[1].set_ylim([-2*input.amplitude(), 2*input.amplitude()])\n        axs[1].legend()\n        axs[1].grid()\n\n        \"\"\"\n        axs[2].plot(t, carre, label = 'Modulant carré')\n        axs[2].set_ylim([-2*input.amplitude(), 2*input.amplitude()])\n        axs[2].legend()\n        axs[2].grid()\n        \"\"\"\n\n        axs[2].plot(t, e_sinus, label = 'Enveloppe')\n        axs[2].set_ylim([-2*input.amplitude(), 2*input.amplitude()])\n        axs[2].plot(t, s_sinus, label = 'Signal modulé')\n        axs[2].legend()\n        axs[2].grid()\n\n        \"\"\"\n        axs[4].plot(t, e_carre, label = 'Enveloppe')\n        axs[4].set_ylim([-2*input.amplitude(), 2*input.amplitude()])\n        axs[4].plot(t, s_carre, label = 'Signal modulé')\n        axs[4].legend()\n        axs[4].grid()\n        \"\"\"\n        \napp = App(app_ui, server)"
+  },
+  {
+    "objectID": "materials/Électronique/Modulations.html#modulation-de-fréquence",
+    "href": "materials/Électronique/Modulations.html#modulation-de-fréquence",
+    "title": "Modulations analogique et numérique",
+    "section": "Modulation de fréquence",
+    "text": "Modulation de fréquence"
+  },
+  {
+    "objectID": "materials/Électronique/Modulations.html#modulation-de-phase",
+    "href": "materials/Électronique/Modulations.html#modulation-de-phase",
+    "title": "Modulations analogique et numérique",
+    "section": "Modulation de phase",
+    "text": "Modulation de phase"
+  },
+  {
+    "objectID": "materials/Électronique/Modulations.html#psk",
+    "href": "materials/Électronique/Modulations.html#psk",
+    "title": "Modulations analogique et numérique",
+    "section": "PSK",
+    "text": "PSK"
+  },
+  {
+    "objectID": "materials/Électronique/Modulations.html#fsk",
+    "href": "materials/Électronique/Modulations.html#fsk",
+    "title": "Modulations analogique et numérique",
+    "section": "FSK",
+    "text": "FSK"
+  },
+  {
+    "objectID": "materials/Électronique/Modulations.html#modulations-complexes",
+    "href": "materials/Électronique/Modulations.html#modulations-complexes",
+    "title": "Modulations analogique et numérique",
+    "section": "Modulations complexes",
+    "text": "Modulations complexes\n\nQAM"
+  },
+  {
+    "objectID": "materials/Électronique/Modulations.html#msk",
+    "href": "materials/Électronique/Modulations.html#msk",
+    "title": "Modulations analogique et numérique",
+    "section": "MSK",
+    "text": "MSK\n\nGMSK"
+  },
+  {
+    "objectID": "materials/Électronique/Modulations.html#delta-sigma",
+    "href": "materials/Électronique/Modulations.html#delta-sigma",
+    "title": "Modulations analogique et numérique",
+    "section": "Delta-Sigma",
+    "text": "Delta-Sigma"
+  },
+  {
+    "objectID": "materials/Électronique/Modulations.html#modulation-multi-porteuses",
+    "href": "materials/Électronique/Modulations.html#modulation-multi-porteuses",
+    "title": "Modulations analogique et numérique",
+    "section": "Modulation multi-porteuses",
+    "text": "Modulation multi-porteuses"
+  }
+]

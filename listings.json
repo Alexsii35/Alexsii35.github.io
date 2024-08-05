@@ -1,0 +1,22 @@
+[
+  {
+    "listing": "/cours.html",
+    "items": [
+      "/materials/Électronique/5G.html",
+      "/materials/Électronique/Hyperfréquences.html",
+      "/materials/Automatique/Asservissement.html",
+      "/materials/Electrotechnique/commande_machine.html",
+      "/materials/Electrotechnique/composantsENPU.html",
+      "/materials/Electrotechnique/machines_elec.html",
+      "/materials/Électronique/Modulations.html",
+      "/materials/Photonique & Optoélectronique/onl.html",
+      "/materials/Photonique & Optoélectronique/phydevice.html",
+      "/materials/Photonique & Optoélectronique/Lasers.html",
+      "/materials/Photonique & Optoélectronique/semicon.html",
+      "/materials/Électronique/quadripoles.html",
+      "/materials/references.html",
+      "/materials/Electrotechnique/reseaux_elec.html",
+      "/materials/Électronique/Echantillonnage.html"
+    ]
+  }
+]
