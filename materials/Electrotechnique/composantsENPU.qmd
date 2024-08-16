@@ -1,10 +1,10 @@
 ---
-title : Composants de l'électronique de puissance
-author : Alexis HOBL
-date : today
+title: Composants de l'électronique de puissance
+author: Alexis HOBL
+date: today
 
 
-editor : 
- render-on-save : true
+editor: 
+ render-on-save: true
 ---
 

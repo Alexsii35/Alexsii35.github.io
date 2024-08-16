@@ -13,23 +13,32 @@
 /*-- scss:defaults --*/
 
 
-
 /*-- scss:rules --*/
 
+@mixin bloc ($back-color){
+
+	padding: 1em;
+	margin-top: 1em;
+	margin-bottom: 1em;
+
+	background-color: $back-color;
+	
+	border-left: solid;
+}
+
 @mixin hist-bloc ($back-color, $fa-icon) {
+	
+	@include bloc($back-color);
+
 	$title-color: black;
 	$inner-color: darkslategray;
 
 	$inner-margin: 1.75em;
 
 	margin: 1em;
-	padding: 1em;
 
 	text-align: justify;
 
-	background-color: $back-color;
-	
-	border-left: solid;
 	dl {}
 
 	li{
@@ -99,3 +108,53 @@
 li {
 	text-align: left;
 }
+
+
+$thm_style: ("": hsl(360, 100%, 93%), 
+"lemma":hsl(280, 100%, 95%),
+"corollary":hsl(300, 100%, 93%),
+"proposition":hsl(25, 100%, 90%),
+"conjecture":hsl(55, 100%, 95%),
+"definition":hsl(128, 100%, 92%),
+"example":hsl(236, 100%, 95%),
+"exercise":hsl(177, 100%, 95%));
+
+
+@each $name, $color_to_use in $thm_style{
+    .theorem#{if($name == "", "", ".#{$name}")}{
+        padding-bottom: 0.5em;
+
+        margin-top: 1em;
+        margin-bottom: 1em;
+        
+        border: 1px solid;
+        border-left: 5px solid;
+        border-radius: 0.25rem;
+
+        border-color: #dee2e6;
+        border-left-color: darken($color_to_use, 30%);
+        
+        .theorem-title::after{
+            content: " :\a";
+            white-space: pre;
+        }
+
+        p{
+            margin: 0em;
+            margin-left: 2em;
+        }
+        
+            
+            p+span{
+                padding-left: -1em;
+                display: block;
+                background-color: $color_to_use;
+                margin-left: -2em;
+                margin-bottom: 0.5em;
+
+                strong{
+                    margin-left: 1em;
+                }
+            }
+        }
+    }

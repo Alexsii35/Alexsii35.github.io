@@ -1,0 +1,12 @@
+project: 
+  render: 
+    - "/"
+    - "!index.qmd"
+
+format: 
+  html:
+    anchor-sections: true
+  pdf: 
+    pdf-engine: lualatex
+
+author: Alexis HOBL

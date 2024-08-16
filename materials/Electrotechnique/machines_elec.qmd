@@ -1,10 +1,10 @@
 ---
-title : Machines électriques
-author : Alexis HOBL
-date : today
+title: Machines électriques
+author: Alexis HOBL
+date: today
 
 
-editor : 
+editor: 
  render-on-save : true
 ---
 

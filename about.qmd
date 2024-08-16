@@ -26,6 +26,8 @@ editor:
 
 Doctorant au CEA-Leti en photonique 
 
+ <i class="fa-brands fa-discord"></i> [Le discord des TSI](https://discord.gg/Hk7eAgsHvq) <i class="fa-brands fa-discord"></i>
+
 # Formations
 
 :::{#cv-bloc}
@@ -78,20 +80,20 @@ Doctorant au CEA-Leti en photonique
 
 2023
 : UrbanLoop
-: Étude technico-économique d’une alimentation d’une capsule UrbanLoop pour l'épreuve du dossier industriel de l'agrégation de SII.""
+: Étude technico-économique d’une alimentation d’une capsule UrbanLoop pour l'épreuve du dossier industriel de l'agrégation de SII.
 
 2022
 : Institut de Physique de Rennes, Rennes
 : Collisions réactives à basse température impliquant l’ion
 CH3+ avec la méthode CRESU-SIS : applications
-astrophysiques
+astrophysiques.
 
 2021
 : IRISA
 : Mise en place d'une expérience
 pour évaluer les performances de quadrirotors
 en suivi de trajectoires robustes dites
-"control-aware"
+"control-aware".
 
 :::
 

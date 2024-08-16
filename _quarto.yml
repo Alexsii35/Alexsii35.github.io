@@ -6,8 +6,6 @@ website:
   navbar:
     left:
       - href: index.qmd
-        text: Accueil
-      - href: cours.qmd
         text: Cours
       - href: about.qmd
         text: A propos de moi
@@ -28,8 +26,14 @@ format:
     resources: 
       - webfonts
       
-# filters:
-#   - shinylive
+open-graph: 
+    locale: fr_FR
+
+    site-url: "https://alexsii35.github.io/"
+
+
+filters:
+ - shinylive
     
 
 

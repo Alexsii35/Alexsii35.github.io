@@ -1,9 +1,19 @@
 ---
-title: "Site personnel"
+title: "Liste des cours"
 
-search: false
+listing:
+  contents: 
+    - "materials/"
+    - "!materials/index.qmd"
+
+
+format:
+  html:
+    mermaid:
+      theme: default
+
+      
 ---
-
 
 
 Ce site est mon site personnel.

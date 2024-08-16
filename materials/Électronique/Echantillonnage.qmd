@@ -1,11 +1,11 @@
 ---
-title : Échantillonnage
-author : Alexis HOBL
-date : today
+title: Échantillonnage
+author: Alexis HOBL
+date: today
 
 
-editor : 
- render-on-save : true
+editor: 
+ render-on-save: true
 ---
 
 # Un petit peu d'histoire...

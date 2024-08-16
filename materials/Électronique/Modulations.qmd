@@ -1,16 +1,15 @@
 ---
-title : Modulations analogique et numérique
-author : Alexis HOBL
-date : today
-
+title: Modulations analogique et numérique
+author: Alexis HOBL
+date: today
 
 format: html
 
 filters:
   - shinylive
 
-editor : 
- render-on-save : true
+editor: 
+ render-on-save: true
 ---
 
 # Un petit peu d'histoire
@@ -42,10 +41,11 @@ editor :
 
 * Modèle OSI
 
-# Définitions
+:::{#def-t}
 
-***Système de communication***
-: On définit un ***système de communication*** comme étant l'ensemble des système composé d'une source d'information via un récepteur via le passage d'un canal de transmission. 
+On définit un ***`système de communication`*** comme étant l'ensemble des système composé d'une source d'information via un récepteur via le passage d'un canal de transmission. 
+
+:::
 
 ```{mermaid}
 flowchart LR
@@ -53,17 +53,23 @@ A(Source) -- Message émis --> B(Canal de transmission) -- Message transmis --> 
 D(Perturbations) ==> B
 ```
 
-***Canal de transmission***
-: On définit un ***canal de transmission*** comme étant tout support physique à travers lequel l'information est transmise. 
-Ce support peut être 
+:::{#def-t}
+
+On définit un ***`canal de transmission`***  comme étant tout support physique à travers lequel l'information est transmise. 
+Ce support peut être :
+
 * Hertzien (air principalement)
+
 * Filaire à support électrique (câble coaxial, lignes torsadées, ...)
+
 * Filaire à support optique (fibre optique, guide d'ondes, ...)
 
 Un canal de transmission est défini par deux caractéristiques :
 1. Sa bande passante.
+
 2. Son bruit.
 
+:::
 
 ***Modulation***
 : Opération consistant à reporter le spectre d'un signal dans un domaine fréquentiel favorable à sa transmission. Il faut adapter le signal au canal auquel il est confronté.
@@ -79,25 +85,35 @@ La modulation est dite analogique si le signal transmis via le canal reste analo
 
 La modulation d'amplitude est une modulation qui consiste à faire varier l'amplitude d'une porteuse à la même fréquence qu'un signal modulant.
 
-***Notations***
-: On appelle :
-* Porteuse le signal $p(t) = A_p cos(\omega_p t +\varphi_p))$.
-* m(t) le signal modulant. Ce signal contient l'information
-* s(t) le signal modulé en amplitude.
+:::{#def-t}
 
-### Bande Latérale Unique (BLU)
+On appelle :
+
+* `Porteuse` le signal $p(t) = A_p cos(\omega_p t +\varphi_p)$.
+
+* Le `signal modulant` m(t). Ce signal contient l'information
+
+* Le `signal modulé` s(t). Le signal modulé en amplitude.
+
+* L'`enveloppe du signal` e(t). L'enveloppe du signal modulé en amplitude s(t).
+
+:::
 
 
 ### Double bande latérale (DSB)
+
+
 On distingue deux types de modulation d'amplitude à double bande latérale : 
 
-* La modulation d'amplitude Double Bande Avec Porteuse (DBAP)
+* La modulation d'amplitude ***Double Bande Avec Porteuse (DBAP)***
 
-* La modulation d'amplitude Double Bande Sans Porteuse (DBSP)
+* La modulation d'amplitude ***Double Bande Sans Porteuse (DBSP)***
 
 L'expression générale du signal modulé est donnée par :
 
- $$f[m(t)]cos(\omega_p t + \varphi_p)$$
+$$
+f[m(t)]cos(\omega_p t + \varphi_p)
+$$
 
 Avec $f[m]$ une fonction affine.
 
@@ -109,32 +125,89 @@ Il est alors possible d'écrire l'expression du signal modulé pour la AM-DBAP e
 ***AM-DBSP***
 : $s(t) = A_p\cdot k\cdot m(t)cos(\omega_p + \varphi_p)$
 
-
-L'emploi d'une fonction $f$ linéaire permet de considérer un signal modulant périodique comme une somme de signal sinusoïde. Le principe de superposition peut alors s'apppliquer.
-
 **On considérere par la suite que $\varphi_p = 0$**.
 
-#### 
+***m(t)*** est appellée fonction de modulation. ***k*** est la constante du circuit modulateur d'amplitude. 
+
+On considère que le signal modulant est borné et compris dans la plage de variation : 
+
+$$
+-M_{max}\leq m(t)\leq M_{max}
+$$
+
+On introduit alors le signal modulant unitaire $m_u(t)$ tel que :
+
+$$
+m_u(t)=\dfrac{m(t)}{M_{max}} \;\; | -1\leq m_u(t) \leq 1
+$$
 
 
-<!-- ```{shinylive-python} -->
+Le signal modulé peut s'écrire sous la forme :
+
+$$
+s(t) = A_p[1+k\cdot m(t)]cos(\omega_p t) = A_p[1+k\cdot M_{max}\cdot m_u(t)]cos(\omega_p)
+$$ 
+
+
+
+$$
+s(t) = A_p[1+k\cdot m_a m_u(t)]cos(\omega_p t)
+$$
+
+
+Où $m_a = k\cdot M_{max}$ est l'indice de modulation.
+
+L'expression de l'enveloppe du signal est la suivante :
+
+$$
+e(t) = A_p[1+m_a m_u(t)] \; | \; A_p[1-m_a]\leq e(t)\leq A_p[1+m_a] \; | \;(1-m_a)A_p \leq e(t) \leq (1+m_a)A_p
+$$
+
+Au vu de l'expression de l'enveloppe, deux cas sont à distingués concernant la valeur de l'indice de modulation $m_a$.
+
+
+* ***Cas $0 < m_a \leq 1$***
+
+Le taux de modulation est ingérieur ou égal à 100%. L'enveloppe $e(t)$ du signal modulé $s(t)$ reproduit le signal modulant $m(t)$ sans déformation. 
+
+
+
+* ***Cas $m_a>1$***
+Le taux de modulation est supérieur à 100%. L'enveloppe $e(t)$ du signal modulé $s(t)$ ne reproduit plus tout à fait le signal modulat $m(t)$. 
+
+
+Le volet ci-dessous @modulation_AM permet de simuler une modulation d'amplitude. Il nécessaire de visualiser les effets du signal modulé $s(t)$ quand la fréquence de la porteuse est inférieure à la fréquence du modulant. Avoir une valeur négative de l'indice de modulation donne des résultats remarquables.
+
+
+
+Cette simulation présente une modulation d'amplitude pour un signal modulant sinusoïdal. Celui-ci peut être égalament carré, triangulaire... Ces modifications concernant le signal modulant sont en cours. 
+
+
+:::{.column-screen-inset}
 ```{shinylive-python}
 #| standalone: true
 #| viewerHeight: 600
 #| viewerWidth: 700
+
 from shiny import App, render, ui
 import numpy as np
-#from scipy import signal
+from scipy import signal
 import matplotlib.pyplot as plt
 
 app_ui = ui.page_fluid(
     ui.layout_sidebar(
         ui.sidebar(
-            ui.input_slider("f_porteuse", "Fréquence_porteuse", 0, 50, 10, step=1),
-            ui.input_slider("f_modulant", "Fréquence_modulant", 0, 5, 1, step=0.1),
+            ui.input_radio_buttons(  
+                    "radio",  
+                    "Type AM",  
+                    {"1": "DBAP", "2": "DBSP"},  
+            ),  
+            ui.output_ui("value"),
+            ui.input_slider("f_porteuse", "Fréquence porteuse", 0, 30, 10, step=1),
+            ui.input_slider("f_modulant", "Fréquence modulant", 0, 5, 1, step=0.1),
             ui.input_slider("amplitude", "Amplitude", 0, 2, 1, step=0.25),
             ui.input_slider("shift", "Déphasage", -2*3.14, 2*3.14, 0, step=0.1),
-            ui.input_slider("m", "Indice de modulation", -5, 5, 0.5, step=0.1),
+            ui.input_slider("m", "Indice de modulation", -1, 1, 0.5, step=0.1),
         ),
     ui.output_plot("plot"),
     ), 
@@ -143,22 +216,26 @@ app_ui = ui.page_fluid(
 def server(input, output, session):
     @output
     @render.plot(alt="Sine function")
+
     def plot():
-        t = np.arange(0.0, 4.0, 0.0001) # vecteur de temps
+        t = np.linspace(0.0, 5.0, 500) # vecteur de temps
 
-        p = input.amplitude()*np.sin((2 * np.pi * input.f_porteuse()) * (t - input.shift() / 2)) # porteuse
+        p = input.amplitude()*np.cos((2 * np.pi * input.f_porteuse()) * (t - input.shift() / 2)) # porteuse
 
-        m = input.amplitude()*np.sin((2*np.pi*input.f_modulant()) * (t - input.shift() / 2)) # signal modulant sinus
+        m = input.amplitude()*np.cos((2*np.pi*input.f_modulant()) * (t - input.shift() / 2)) # signal modulant sinus
 
         #carre = input.amplitude()*signal.square((2*np.pi*input.f_modulant()) * (t - input.shift() / 2)) # signal modulant carré
-        
-        s_sinus = input.amplitude()*(1+input.m()*m)*np.sin((2 * np.pi * input.f_porteuse()) * (t - input.shift() / 2)) #signal modulé
-        
-        #s_carre = input.amplitude()*(1+input.carre()*m)*np.sin((2 * np.pi / input.period_porteuse()) * (t - input.shift() / 2)) #signal modulé
 
-        e_sinus = input.amplitude()*(1+input.m()*m) # enveloppe supérieure
-
+        e_cosinus = input.amplitude()*(1+input.m()*m) # enveloppe supérieure
+        
         #e_carre = input.amplitude()*(1+input.m()*carre) # enveloppe supérieure
+        
+        if input.radio() == "1":
+            s_cosinus = p*(1+input.m()*m) #signal modulé
+        else:
+            s_cosinus =p*input.m()*m #signal modulé
+
+        #s_carre = input.amplitude()*(1+input.carre()*m)*np.sin((2 * np.pi / input.period_porteuse()) * (t - input.shift() / 2)) #signal modulé
 
         fig, axs = plt.subplots(3, 1)
 
@@ -180,12 +257,12 @@ def server(input, output, session):
         axs[2].grid()
         """
 
-        axs[2].plot(t, e_sinus, label = 'Enveloppe')
+        axs[2].plot(t, e_cosinus, label = 'Enveloppe')
         axs[2].set_ylim([-2*input.amplitude(), 2*input.amplitude()])
-        axs[2].plot(t, s_sinus, label = 'Signal modulé')
+        axs[2].plot(t, s_cosinus, label = 'Signal modulé')
         axs[2].legend()
         axs[2].grid()
-
+        
         """
         axs[4].plot(t, e_carre, label = 'Enveloppe')
         axs[4].set_ylim([-2*input.amplitude(), 2*input.amplitude()])
@@ -195,8 +272,170 @@ def server(input, output, session):
         """
         
 app = App(app_ui, server)
-
 ```
+:::
+
+### Spectre d'un signal modulé en amplitude
+
+La visualisation d'un spectre d'un signaux s'effectue en appliquant une transformée de Fourier au signal à visualiser.
+
+On définit alors la transformée de Fourier $S(f)$ du signal $s(t)$ :
+
+$$ S(f) = \int_{-\infty}^{+\infty}s(t)e^{-j2\pi f t}dt $$ 
+
+
+
+:::{.column-screen-inset}
+```{shinylive-python}
+#| standalone: true
+#| viewerHeight: 600
+#| viewerWidth: 700
+
+from shiny import App, render, ui
+import numpy as np
+from scipy import signal
+import matplotlib.pyplot as plt
+
+from shiny import App, render, ui
+import numpy as np
+import matplotlib.pyplot as plt
+
+app_ui = ui.page_fluid(
+    ui.layout_sidebar(
+        ui.sidebar(
+            ui.input_radio_buttons(  
+                "radio",  
+                "Type AM",  
+                {"1": "DBAP", "2": "DBSP"},  
+            ),  
+            ui.output_ui("value"),
+            ui.input_slider("f_porteuse", "Fréquence porteuse", 0, 30, 10, step=1),
+            ui.input_slider("f_modulant", "Fréquence modulant", 0, 5, 1, step=0.1),
+            ui.input_slider("amplitude", "Amplitude", 0, 2, 1, step=0.25),
+            ui.input_slider("shift", "Déphasage", -2*3.14, 2*3.14, 0, step=0.1),
+            ui.input_slider("m", "Indice de modulation", -1, 1, 0.5, step=0.1),
+        ),
+        ui.output_plot("plot"),
+    ), 
+)
+
+def server(input, output, session):
+    @output
+    @render.plot(alt="Spectrum of AM Signal")
+    def plot():
+        n = 10
+        q = 2**n
+        Te = 5  # Période d'échantillonnage
+        Fe = 1023/Te  # Fréquence d'échantillonnage
+        t = np.linspace(0, 5, q)  # Vecteur temps
+        f = np.fft.fftfreq(q, d=1/Fe)  # Vecteur fréquence
+
+        # Porteuse
+        p = input.amplitude() * np.cos(2 * np.pi * input.f_porteuse() * (t - input.shift() / 2))
+
+        # Modulant
+        m = input.amplitude() * np.cos(2 * np.pi * input.f_modulant() * (t - input.shift() / 2))
+
+        # Signaux modulés
+        if input.radio() == "1":
+            # AM avec porteuse(DSB-AM)
+            s = p * (1 + input.m() * m)
+        else:
+            # AM sans porteuse (DSB-SC)
+            s = input.m() * p * m
+
+        # Fourier Transform 
+        S = np.fft.fft(s)
+        S_magnitude = input.amplitude()*(np.abs(S)/np.max(S))
+
+        # Avec Heaviside
+        P_delta = np.heaviside(0,input.f_porteuse)
+        M_delta = np.heaviside(0,input.f_modulant)
+
+        # Plot
+        fig, ax = plt.subplots(1, 1)
+        ax.plot(f[:len(S_magnitude)], S_magnitude, label='Amplitude de TF{Signal modulé}')
+        ax.plot(f[:len(S_magnitude)], P_delta, label='Amplitude de TF[porteuse]')
+        ax.plot(f[:len(S_magnitude)], M_delta, label='Amplitude de TF[Signal modulant]')
+        ax.set_xlim([-np.max(f)//2, np.max(f)//2])
+        ax.set_ylim([0, 1.1*np.max(S_magnitude)])
+        ax.set_xlabel('Frequency (Hz)')
+        ax.set_ylabel('Amplitude')
+        ax.legend()
+        ax.grid()
+
+app = App(app_ui, server)
+```
+:::
+
+
+
+
+### Bande Latérale Unique (BLU)
+
+
+
+
+
+
+
+:::{#thm-1}
+# Super theorem
+theorem
+:::
+
+:::{#lem-t}
+#     Lemma     
+lemma
+:::
+
+:::{#cor-t}
+#     Corollary     
+corollary
+:::
+
+:::{#prp-t}
+#     Proposition     
+proposition
+:::
+
+:::{#cnj-t}
+#     Conjecture     
+conjecture
+:::
+
+:::{#def-t}
+#     Definition     
+definition
+:::
+
+:::{#exm-t}
+#     Example     
+example
+:::
+
+:::{#exr-t}
+#     Exercise     
+exercise
+:::
+
+:::{#sol-t}
+#     Solution     
+solution
+:::
+
+:::{#rem-t}
+# Remarque
+remarque
+:::
+
+
+
+
+
+
+
+
 
 
 

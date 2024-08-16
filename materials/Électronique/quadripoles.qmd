@@ -1,10 +1,10 @@
 ---
-title : Quadripôles
-author : Alexis HOBL
-date : today
+title: Quadripôles
+author: Alexis HOBL
+date: today
 
 
-editor : 
- render-on-save : true
+editor: 
+ render-on-save: true
 ---
 

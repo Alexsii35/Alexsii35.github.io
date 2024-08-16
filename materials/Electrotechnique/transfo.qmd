@@ -1,11 +1,9 @@
 ---
-title : Transformateurs électrique
-author : Alexis HOBL
-date : today
+title: Transformateurs électrique
+author: Alexis HOBL
+date: today
 
-draft: true
-
-editor : 
+editor: 
  render-on-save : true
 ---
 
