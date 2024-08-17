@@ -518,14 +518,14 @@ def server(input, output, session):
         S_magnitude = input.amplitude()*(np.abs(S)/np.max(S))
 
         # Avec Heaviside
-        P_delta = np.heaviside(0,input.f_porteuse)
-        M_delta = np.heaviside(0,input.f_modulant)
+        # P_delta = np.heaviside(0,input.f_porteuse)
+        # M_delta = np.heaviside(0,input.f_modulant)
 
         # Plot
         fig, ax = plt.subplots(1, 1)
         ax.plot(f[:len(S_magnitude)], S_magnitude, label='Amplitude de TF{Signal modulé}')
-        ax.plot(f[:len(S_magnitude)], P_delta, label='Amplitude de TF[porteuse]')
-        ax.plot(f[:len(S_magnitude)], M_delta, label='Amplitude de TF[Signal modulant]')
+        #ax.plot(f[:len(S_magnitude)], P_delta, label='Amplitude de TF[porteuse]')
+        #ax.plot(f[:len(S_magnitude)], M_delta, label='Amplitude de TF[Signal modulant]')
         ax.set_xlim([-np.max(f)//2, np.max(f)//2])
         ax.set_ylim([0, 1.1*np.max(S_magnitude)])
         ax.set_xlabel('Frequency (Hz)')
