@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Alexis HOBL">
-<meta name="dcterms.date" content="2024-08-05">
+<meta name="dcterms.date" content="2024-08-17">
 
 <title>Modulations analogique et numérique – Alexis HOBL</title>
 <style>
@@ -107,6 +107,10 @@ window.Quarto = {
 };
 </script>
 
+<meta property="og:title" content="Modulations analogique et numérique – Alexis HOBL">
+<meta property="og:description" content="">
+<meta property="og:site_name" content="Alexis HOBL">
+<meta property="og:locale" content="fr_FR">
 </head>
 
 <body class="nav-fixed">
@@ -128,10 +132,6 @@ window.Quarto = {
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
     <a class="nav-link" href="../../index.html"> 
-<span class="menu-text">Accueil</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../../cours.html"> 
 <span class="menu-text">Cours</span></a>
   </li>  
   <li class="nav-item">
@@ -160,13 +160,13 @@ window.Quarto = {
   <li><a href="#les-télécommunications-sans-fil" id="toc-les-télécommunications-sans-fil" class="nav-link" data-scroll-target="#les-télécommunications-sans-fil">Les télécommunications sans fil</a></li>
   </ul></li>
   <li><a href="#prérequis" id="toc-prérequis" class="nav-link" data-scroll-target="#prérequis">Prérequis</a></li>
-  <li><a href="#définitions" id="toc-définitions" class="nav-link" data-scroll-target="#définitions">Définitions</a></li>
   <li><a href="#modulation-analogique" id="toc-modulation-analogique" class="nav-link" data-scroll-target="#modulation-analogique">Modulation analogique</a>
   <ul class="collapse">
   <li><a href="#modulation-damplitude-am" id="toc-modulation-damplitude-am" class="nav-link" data-scroll-target="#modulation-damplitude-am">Modulation d’amplitude (AM)</a>
   <ul class="collapse">
-  <li><a href="#bande-latérale-unique-blu" id="toc-bande-latérale-unique-blu" class="nav-link" data-scroll-target="#bande-latérale-unique-blu">Bande Latérale Unique (BLU)</a></li>
   <li><a href="#double-bande-latérale-dsb" id="toc-double-bande-latérale-dsb" class="nav-link" data-scroll-target="#double-bande-latérale-dsb">Double bande latérale (DSB)</a></li>
+  <li><a href="#spectre-dun-signal-modulé-en-amplitude" id="toc-spectre-dun-signal-modulé-en-amplitude" class="nav-link" data-scroll-target="#spectre-dun-signal-modulé-en-amplitude">Spectre d’un signal modulé en amplitude</a></li>
+  <li><a href="#bande-latérale-unique-blu" id="toc-bande-latérale-unique-blu" class="nav-link" data-scroll-target="#bande-latérale-unique-blu">Bande Latérale Unique (BLU)</a></li>
   </ul></li>
   <li><a href="#modulation-de-fréquence" id="toc-modulation-de-fréquence" class="nav-link" data-scroll-target="#modulation-de-fréquence">Modulation de fréquence</a></li>
   <li><a href="#modulation-de-phase" id="toc-modulation-de-phase" class="nav-link" data-scroll-target="#modulation-de-phase">Modulation de phase</a></li>
@@ -187,10 +187,10 @@ window.Quarto = {
   <li><a href="#modulation-multi-porteuses" id="toc-modulation-multi-porteuses" class="nav-link" data-scroll-target="#modulation-multi-porteuses">Modulation multi-porteuses</a></li>
   </ul></li>
   </ul>
-</nav>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="Modulations.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -211,7 +211,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">August 5, 2024</p>
+      <p class="date">August 17, 2024</p>
     </div>
   </div>
   
@@ -250,15 +250,9 @@ window.Quarto = {
 <li><p>Analyse spectrale</p></li>
 <li><p>Modèle OSI</p></li>
 </ul>
-</section>
-<section id="définitions" class="level1">
-<h1>Définitions</h1>
-<dl>
-<dt><strong><em>Système de communication</em></strong></dt>
-<dd>
-On définit un <strong><em>système de communication</em></strong> comme étant l’ensemble des système composé d’une source d’information via un récepteur via le passage d’un canal de transmission.
-</dd>
-</dl>
+<div id="def-t" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 1</strong></span> On définit un <strong><em><code>système de communication</code></em></strong> comme étant l’ensemble des système composé d’une source d’information via un récepteur via le passage d’un canal de transmission.</p>
+</div>
 <div class="cell" data-layout-align="default">
 <div class="cell-output-display">
 <div>
@@ -273,13 +267,18 @@ D(Perturbations) ==&gt; B
 </div>
 </div>
 </div>
-<dl>
-<dt><strong><em>Canal de transmission</em></strong></dt>
-<dd>
-On définit un <strong><em>canal de transmission</em></strong> comme étant tout support physique à travers lequel l’information est transmise. Ce support peut être * Hertzien (air principalement) * Filaire à support électrique (câble coaxial, lignes torsadées, …) * Filaire à support optique (fibre optique, guide d’ondes, …)
-</dd>
-</dl>
-<p>Un canal de transmission est défini par deux caractéristiques : 1. Sa bande passante. 2. Son bruit.</p>
+<div id="def-t" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 2</strong></span> On définit un <strong><em><code>canal de transmission</code></em></strong> comme étant tout support physique à travers lequel l’information est transmise. Ce support peut être :</p>
+<ul>
+<li><p>Hertzien (air principalement)</p></li>
+<li><p>Filaire à support électrique (câble coaxial, lignes torsadées, …)</p></li>
+<li><p>Filaire à support optique (fibre optique, guide d’ondes, …)</p></li>
+</ul>
+<p>Un canal de transmission est défini par deux caractéristiques : 1. Sa bande passante.</p>
+<ol start="2" type="1">
+<li>Son bruit.</li>
+</ol>
+</div>
 <dl>
 <dt><strong><em>Modulation</em></strong></dt>
 <dd>
@@ -291,30 +290,32 @@ Un signal est analogique si <span class="math inline">\(s(t) : t \in X \subseteq
 </dd>
 </dl>
 </section>
-<section id="modulation-analogique" class="level1">
+<section id="modulation-analogique" class="level1 page-columns page-full">
 <h1>Modulation analogique</h1>
 <p>La modulation est dite analogique si le signal transmis via le canal reste analogique durant tout le processus de transmission.</p>
-<section id="modulation-damplitude-am" class="level2">
+<section id="modulation-damplitude-am" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="modulation-damplitude-am">Modulation d’amplitude (AM)</h2>
 <p>La modulation d’amplitude est une modulation qui consiste à faire varier l’amplitude d’une porteuse à la même fréquence qu’un signal modulant.</p>
-<dl>
-<dt><strong><em>Notations</em></strong></dt>
-<dd>
-On appelle : * Porteuse le signal <span class="math inline">\(p(t) = A_p cos(\omega_p t +\varphi_p))\)</span>. * m(t) le signal modulant. Ce signal contient l’information * s(t) le signal modulé en amplitude.
-</dd>
-</dl>
-<section id="bande-latérale-unique-blu" class="level3">
-<h3 class="anchored" data-anchor-id="bande-latérale-unique-blu">Bande Latérale Unique (BLU)</h3>
-</section>
-<section id="double-bande-latérale-dsb" class="level3">
+<div id="def-t" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 3</strong></span> On appelle :</p>
+<ul>
+<li><p><code>Porteuse</code> le signal <span class="math inline">\(p(t) = A_p cos(\omega_p t +\varphi_p)\)</span>.</p></li>
+<li><p>Le <code>signal modulant</code> m(t). Ce signal contient l’information</p></li>
+<li><p>Le <code>signal modulé</code> s(t). Le signal modulé en amplitude.</p></li>
+<li><p>L’<code>enveloppe du signal</code> e(t). L’enveloppe du signal modulé en amplitude s(t).</p></li>
+</ul>
+</div>
+<section id="double-bande-latérale-dsb" class="level3 page-columns page-full">
 <h3 class="anchored" data-anchor-id="double-bande-latérale-dsb">Double bande latérale (DSB)</h3>
 <p>On distingue deux types de modulation d’amplitude à double bande latérale :</p>
 <ul>
-<li><p>La modulation d’amplitude Double Bande Avec Porteuse (DBAP)</p></li>
-<li><p>La modulation d’amplitude Double Bande Sans Porteuse (DBSP)</p></li>
+<li><p>La modulation d’amplitude <strong><em>Double Bande Avec Porteuse (DBAP)</em></strong></p></li>
+<li><p>La modulation d’amplitude <strong><em>Double Bande Sans Porteuse (DBSP)</em></strong></p></li>
 </ul>
 <p>L’expression générale du signal modulé est donnée par :</p>
-<p><span class="math display">\[f[m(t)]cos(\omega_p t + \varphi_p)\]</span></p>
+<p><span class="math display">\[
+f[m(t)]cos(\omega_p t + \varphi_p)
+\]</span></p>
 <p>Avec <span class="math inline">\(f[m]\)</span> une fonction affine.</p>
 <p>Il est alors possible d’écrire l’expression du signal modulé pour la AM-DBAP et la AM-DBSP.</p>
 <dl>
@@ -327,27 +328,62 @@ On appelle : * Porteuse le signal <span class="math inline">\(p(t) = A_p cos(\om
 <span class="math inline">\(s(t) = A_p\cdot k\cdot m(t)cos(\omega_p + \varphi_p)\)</span>
 </dd>
 </dl>
-<p>L’emploi d’une fonction <span class="math inline">\(f\)</span> linéaire permet de considérer un signal modulant périodique comme une somme de signal sinusoïde. Le principe de superposition peut alors s’apppliquer.</p>
 <p><strong>On considérere par la suite que <span class="math inline">\(\varphi_p = 0\)</span></strong>.</p>
-<section id="section" class="level4">
-<h4 class="anchored" data-anchor-id="section"></h4>
-<!-- ```{shinylive-python} -->
+<p><strong><em>m(t)</em></strong> est appellée fonction de modulation. <strong><em>k</em></strong> est la constante du circuit modulateur d’amplitude.</p>
+<p>On considère que le signal modulant est borné et compris dans la plage de variation :</p>
+<p><span class="math display">\[
+-M_{max}\leq m(t)\leq M_{max}
+\]</span></p>
+<p>On introduit alors le signal modulant unitaire <span class="math inline">\(m_u(t)\)</span> tel que :</p>
+<p><span class="math display">\[
+m_u(t)=\dfrac{m(t)}{M_{max}} \;\; | -1\leq m_u(t) \leq 1
+\]</span></p>
+<p>Le signal modulé peut s’écrire sous la forme :</p>
+<p><span class="math display">\[
+s(t) = A_p[1+k\cdot m(t)]cos(\omega_p t) = A_p[1+k\cdot M_{max}\cdot m_u(t)]cos(\omega_p)
+\]</span></p>
+<p><span class="math display">\[
+s(t) = A_p[1+k\cdot m_a m_u(t)]cos(\omega_p t)
+\]</span></p>
+<p>Où <span class="math inline">\(m_a = k\cdot M_{max}\)</span> est l’indice de modulation.</p>
+<p>L’expression de l’enveloppe du signal est la suivante :</p>
+<p><span class="math display">\[
+e(t) = A_p[1+m_a m_u(t)] \; | \; A_p[1-m_a]\leq e(t)\leq A_p[1+m_a] \; | \;(1-m_a)A_p \leq e(t) \leq (1+m_a)A_p
+\]</span></p>
+<p>Au vu de l’expression de l’enveloppe, deux cas sont à distingués concernant la valeur de l’indice de modulation <span class="math inline">\(m_a\)</span>.</p>
+<ul>
+<li><strong><em>Cas <span class="math inline">\(0 &lt; m_a \leq 1\)</span></em></strong></li>
+</ul>
+<p>Le taux de modulation est ingérieur ou égal à 100%. L’enveloppe <span class="math inline">\(e(t)\)</span> du signal modulé <span class="math inline">\(s(t)\)</span> reproduit le signal modulant <span class="math inline">\(m(t)\)</span> sans déformation.</p>
+<ul>
+<li><strong><em>Cas <span class="math inline">\(m_a&gt;1\)</span></em></strong> Le taux de modulation est supérieur à 100%. L’enveloppe <span class="math inline">\(e(t)\)</span> du signal modulé <span class="math inline">\(s(t)\)</span> ne reproduit plus tout à fait le signal modulat <span class="math inline">\(m(t)\)</span>.</li>
+</ul>
+<p>Le volet ci-dessous <span class="citation" data-cites="modulation_AM">@modulation_AM</span> permet de simuler une modulation d’amplitude. Il nécessaire de visualiser les effets du signal modulé <span class="math inline">\(s(t)\)</span> quand la fréquence de la porteuse est inférieure à la fréquence du modulant. Avoir une valeur négative de l’indice de modulation donne des résultats remarquables.</p>
+<p>Cette simulation présente une modulation d’amplitude pour un signal modulant sinusoïdal. Celui-ci peut être égalament carré, triangulaire… Ces modifications concernant le signal modulant sont en cours.</p>
+<div class="column-screen-inset">
 <pre class="shinylive-python" data-engine="python"><code>#| standalone: true
 #| viewerHeight: 600
 #| viewerWidth: 700
+
 from shiny import App, render, ui
 import numpy as np
-#from scipy import signal
+from scipy import signal
 import matplotlib.pyplot as plt
 
 app_ui = ui.page_fluid(
     ui.layout_sidebar(
         ui.sidebar(
-            ui.input_slider("f_porteuse", "Fréquence_porteuse", 0, 50, 10, step=1),
-            ui.input_slider("f_modulant", "Fréquence_modulant", 0, 5, 1, step=0.1),
+            ui.input_radio_buttons(  
+                    "radio",  
+                    "Type AM",  
+                    {"1": "DBAP", "2": "DBSP"},  
+            ),  
+            ui.output_ui("value"),
+            ui.input_slider("f_porteuse", "Fréquence porteuse", 0, 30, 10, step=1),
+            ui.input_slider("f_modulant", "Fréquence modulant", 0, 5, 1, step=0.1),
             ui.input_slider("amplitude", "Amplitude", 0, 2, 1, step=0.25),
             ui.input_slider("shift", "Déphasage", -2*3.14, 2*3.14, 0, step=0.1),
-            ui.input_slider("m", "Indice de modulation", -5, 5, 0.5, step=0.1),
+            ui.input_slider("m", "Indice de modulation", -1, 1, 0.5, step=0.1),
         ),
     ui.output_plot("plot"),
     ), 
@@ -356,22 +392,26 @@ app_ui = ui.page_fluid(
 def server(input, output, session):
     @output
     @render.plot(alt="Sine function")
+
     def plot():
-        t = np.arange(0.0, 4.0, 0.0001) # vecteur de temps
+        t = np.linspace(0.0, 5.0, 500) # vecteur de temps
 
-        p = input.amplitude()*np.sin((2 * np.pi * input.f_porteuse()) * (t - input.shift() / 2)) # porteuse
+        p = input.amplitude()*np.cos((2 * np.pi * input.f_porteuse()) * (t - input.shift() / 2)) # porteuse
 
-        m = input.amplitude()*np.sin((2*np.pi*input.f_modulant()) * (t - input.shift() / 2)) # signal modulant sinus
+        m = input.amplitude()*np.cos((2*np.pi*input.f_modulant()) * (t - input.shift() / 2)) # signal modulant sinus
 
         #carre = input.amplitude()*signal.square((2*np.pi*input.f_modulant()) * (t - input.shift() / 2)) # signal modulant carré
-        
-        s_sinus = input.amplitude()*(1+input.m()*m)*np.sin((2 * np.pi * input.f_porteuse()) * (t - input.shift() / 2)) #signal modulé
-        
-        #s_carre = input.amplitude()*(1+input.carre()*m)*np.sin((2 * np.pi / input.period_porteuse()) * (t - input.shift() / 2)) #signal modulé
 
-        e_sinus = input.amplitude()*(1+input.m()*m) # enveloppe supérieure
-
+        e_cosinus = input.amplitude()*(1+input.m()*m) # enveloppe supérieure
+        
         #e_carre = input.amplitude()*(1+input.m()*carre) # enveloppe supérieure
+        
+        if input.radio() == "1":
+            s_cosinus = p*(1+input.m()*m) #signal modulé
+        else:
+            s_cosinus =p*input.m()*m #signal modulé
+
+        #s_carre = input.amplitude()*(1+input.carre()*m)*np.sin((2 * np.pi / input.period_porteuse()) * (t - input.shift() / 2)) #signal modulé
 
         fig, axs = plt.subplots(3, 1)
 
@@ -393,12 +433,12 @@ def server(input, output, session):
         axs[2].grid()
         """
 
-        axs[2].plot(t, e_sinus, label = 'Enveloppe')
+        axs[2].plot(t, e_cosinus, label = 'Enveloppe')
         axs[2].set_ylim([-2*input.amplitude(), 2*input.amplitude()])
-        axs[2].plot(t, s_sinus, label = 'Signal modulé')
+        axs[2].plot(t, s_cosinus, label = 'Signal modulé')
         axs[2].legend()
         axs[2].grid()
-
+        
         """
         axs[4].plot(t, e_carre, label = 'Enveloppe')
         axs[4].set_ylim([-2*input.amplitude(), 2*input.amplitude()])
@@ -407,9 +447,127 @@ def server(input, output, session):
         axs[4].grid()
         """
         
-app = App(app_ui, server)
-</code></pre>
+app = App(app_ui, server)</code></pre>
+</div>
 </section>
+<section id="spectre-dun-signal-modulé-en-amplitude" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="spectre-dun-signal-modulé-en-amplitude">Spectre d’un signal modulé en amplitude</h3>
+<p>La visualisation d’un spectre d’un signaux s’effectue en appliquant une transformée de Fourier au signal à visualiser.</p>
+<p>On définit alors la transformée de Fourier <span class="math inline">\(S(f)\)</span> du signal <span class="math inline">\(s(t)\)</span> :</p>
+<p><span class="math display">\[ S(f) = \int_{-\infty}^{+\infty}s(t)e^{-j2\pi f t}dt \]</span></p>
+<div class="column-screen-inset">
+<pre class="shinylive-python" data-engine="python"><code>#| standalone: true
+#| viewerHeight: 600
+#| viewerWidth: 700
+
+from shiny import App, render, ui
+import numpy as np
+from scipy import signal
+import matplotlib.pyplot as plt
+
+from shiny import App, render, ui
+import numpy as np
+import matplotlib.pyplot as plt
+
+app_ui = ui.page_fluid(
+    ui.layout_sidebar(
+        ui.sidebar(
+            ui.input_radio_buttons(  
+                "radio",  
+                "Type AM",  
+                {"1": "DBAP", "2": "DBSP"},  
+            ),  
+            ui.output_ui("value"),
+            ui.input_slider("f_porteuse", "Fréquence porteuse", 0, 30, 10, step=1),
+            ui.input_slider("f_modulant", "Fréquence modulant", 0, 5, 1, step=0.1),
+            ui.input_slider("amplitude", "Amplitude", 0, 2, 1, step=0.25),
+            ui.input_slider("shift", "Déphasage", -2*3.14, 2*3.14, 0, step=0.1),
+            ui.input_slider("m", "Indice de modulation", -1, 1, 0.5, step=0.1),
+        ),
+        ui.output_plot("plot"),
+    ), 
+)
+
+def server(input, output, session):
+    @output
+    @render.plot(alt="Spectrum of AM Signal")
+    def plot():
+        n = 10
+        q = 2**n
+        Te = 5  # Période d'échantillonnage
+        Fe = 1023/Te  # Fréquence d'échantillonnage
+        t = np.linspace(0, 5, q)  # Vecteur temps
+        f = np.fft.fftfreq(q, d=1/Fe)  # Vecteur fréquence
+
+        # Porteuse
+        p = input.amplitude() * np.cos(2 * np.pi * input.f_porteuse() * (t - input.shift() / 2))
+
+        # Modulant
+        m = input.amplitude() * np.cos(2 * np.pi * input.f_modulant() * (t - input.shift() / 2))
+
+        # Signaux modulés
+        if input.radio() == "1":
+            # AM avec porteuse(DSB-AM)
+            s = p * (1 + input.m() * m)
+        else:
+            # AM sans porteuse (DSB-SC)
+            s = input.m() * p * m
+
+        # Fourier Transform 
+        S = np.fft.fft(s)
+        S_magnitude = input.amplitude()*(np.abs(S)/np.max(S))
+
+        # Avec Heaviside
+        P_delta = np.heaviside(0,input.f_porteuse)
+        M_delta = np.heaviside(0,input.f_modulant)
+
+        # Plot
+        fig, ax = plt.subplots(1, 1)
+        ax.plot(f[:len(S_magnitude)], S_magnitude, label='Amplitude de TF{Signal modulé}')
+        ax.plot(f[:len(S_magnitude)], P_delta, label='Amplitude de TF[porteuse]')
+        ax.plot(f[:len(S_magnitude)], M_delta, label='Amplitude de TF[Signal modulant]')
+        ax.set_xlim([-np.max(f)//2, np.max(f)//2])
+        ax.set_ylim([0, 1.1*np.max(S_magnitude)])
+        ax.set_xlabel('Frequency (Hz)')
+        ax.set_ylabel('Amplitude')
+        ax.legend()
+        ax.grid()
+
+app = App(app_ui, server)</code></pre>
+</div>
+</section>
+<section id="bande-latérale-unique-blu" class="level3">
+<h3 class="anchored" data-anchor-id="bande-latérale-unique-blu">Bande Latérale Unique (BLU)</h3>
+<div id="thm-1" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 1 (Super theorem)</strong></span> theorem</p>
+</div>
+<div id="lem-t" class="theorem lemma">
+<p><span class="theorem-title"><strong>Lemma 1 (Lemma)</strong></span> lemma</p>
+</div>
+<div id="cor-t" class="theorem corollary">
+<p><span class="theorem-title"><strong>Corollary 1 (Corollary)</strong></span> corollary</p>
+</div>
+<div id="prp-t" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 1 (Proposition)</strong></span> proposition</p>
+</div>
+<div id="cnj-t" class="theorem conjecture">
+<p><span class="theorem-title"><strong>Conjecture 1 (Conjecture)</strong></span> conjecture</p>
+</div>
+<div id="def-t" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 4 (Definition)</strong></span> definition</p>
+</div>
+<div id="exm-t" class="theorem example">
+<p><span class="theorem-title"><strong>Example 1 (Example)</strong></span> example</p>
+</div>
+<div id="exr-t" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 1 (Exercise)</strong></span> exercise</p>
+</div>
+<div id="sol-t" class="proof solution">
+<p><span class="proof-title"><em>Solution 1</em> (Solution). </span>solution</p>
+</div>
+<div id="rem-t" class="proof remark">
+<p><span class="proof-title"><em>Remark 1</em> (Remarque). </span>remarque</p>
+</div>
 </section>
 </section>
 <section id="modulation-de-fréquence" class="level2">
@@ -543,7 +701,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
+      var filterRegex = new RegExp("https:\/\/Alexsii35\.github\.io\/");
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }

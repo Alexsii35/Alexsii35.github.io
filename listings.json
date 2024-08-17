@@ -1,6 +1,6 @@
 [
   {
-    "listing": "/cours.html",
+    "listing": "/index.html",
     "items": [
       "/materials/Électronique/5G.html",
       "/materials/Électronique/Hyperfréquences.html",
@@ -14,8 +14,8 @@
       "/materials/Photonique & Optoélectronique/Lasers.html",
       "/materials/Photonique & Optoélectronique/semicon.html",
       "/materials/Électronique/quadripoles.html",
-      "/materials/references.html",
       "/materials/Electrotechnique/reseaux_elec.html",
+      "/materials/Electrotechnique/transfo.html",
       "/materials/Électronique/Echantillonnage.html"
     ]
   }
