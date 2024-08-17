@@ -348,7 +348,7 @@ s(t) = A_p[1+k\cdot m_a m_u(t)]cos(\omega_p t)
 <p>Où <span class="math inline">\(m_a = k\cdot M_{max}\)</span> est l’indice de modulation.</p>
 <p>L’expression de l’enveloppe du signal est la suivante :</p>
 <p><span class="math display">\[
-e(t) = A_p[1+m_a m_u(t)] \; | \; A_p[1-m_a]\leq e(t)\leq A_p[1+m_a] \; | \;(1-m_a)A_p \leq e(t) \leq (1+m_a)A_p
+e(t) = A_p[1+m_a m_u(t)] \; | \; A_p[1-m_a]\leq e(t)\leq A_p[1+m_a]
 \]</span></p>
 <p>Au vu de l’expression de l’enveloppe, deux cas sont à distingués concernant la valeur de l’indice de modulation <span class="math inline">\(m_a\)</span>.</p>
 <ul>
@@ -472,16 +472,11 @@ import matplotlib.pyplot as plt
 app_ui = ui.page_fluid(
     ui.layout_sidebar(
         ui.sidebar(
-            ui.input_radio_buttons(  
-                "radio",  
-                "Type AM",  
-                {"1": "DBAP", "2": "DBSP"},  
-            ),  
+
             ui.output_ui("value"),
             ui.input_slider("f_porteuse", "Fréquence porteuse", 0, 30, 10, step=1),
             ui.input_slider("f_modulant", "Fréquence modulant", 0, 5, 1, step=0.1),
             ui.input_slider("amplitude", "Amplitude", 0, 2, 1, step=0.25),
-            ui.input_slider("shift", "Déphasage", -2*3.14, 2*3.14, 0, step=0.1),
             ui.input_slider("m", "Indice de modulation", -1, 1, 0.5, step=0.1),
         ),
         ui.output_plot("plot"),
@@ -500,18 +495,13 @@ def server(input, output, session):
         f = np.fft.fftfreq(q, d=1/Fe)  # Vecteur fréquence
 
         # Porteuse
-        p = input.amplitude() * np.cos(2 * np.pi * input.f_porteuse() * (t - input.shift() / 2))
+        p = input.amplitude() * np.cos(2 * np.pi * input.f_porteuse() * (t))
 
         # Modulant
-        m = input.amplitude() * np.cos(2 * np.pi * input.f_modulant() * (t - input.shift() / 2))
+        m = input.amplitude() * np.cos(2 * np.pi * input.f_modulant() * (t))
 
-        # Signaux modulés
-        if input.radio() == "1":
-            # AM avec porteuse(DSB-AM)
-            s = p * (1 + input.m() * m)
-        else:
-            # AM sans porteuse (DSB-SC)
-            s = input.m() * p * m
+        # AM avec porteuse (DSB-AM)
+        s = p * (1 + input.m() * m)
 
         # Fourier Transform 
         S = np.fft.fft(s)
